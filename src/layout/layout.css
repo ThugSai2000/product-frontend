@@ -1,0 +1,106 @@
+.header{
+    width: 100%;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+   
+    
+}
+
+.sideBar{
+    width: 15%;
+    height: 100vh;
+    border-right: 2px solid gray;
+    position: fixed;
+    top: 74px;
+    z-index: 1;
+}
+.content{
+    margin-top: 18px;
+    /* border: 1px solid black; */
+    width: 85%;
+    float: right;
+    /* padding: 20px; */
+    
+}
+
+/* Input */
+#input-component{
+    border: 2px solid grey;
+    padding: 5px;
+    border-radius: 5px;
+    
+}
+
+/* Button */
+
+#button-component{
+    border: 0;
+    padding: 8px;
+    background-color: dodgerblue;
+    border-radius: 5px;
+    color: white;
+}
+
+#button-component:hover{
+    background-color: orange;
+}
+
+
+
+
+/* Header */
+.main-header{
+    
+    border-bottom: 2px solid gray;
+   
+}
+
+
+.header-right{
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header-right h6{
+    color: gray;
+    font-weight: 600;
+}
+
+/* Sidebar */
+.sidebar{
+    width: inherit;
+}
+.sidebar a{
+    color: black;
+    text-decoration: none;
+}
+
+.menu-title{
+    color: gray;
+    font-size: 16px;
+    padding: 10px 15px;
+    background-color: #e9ebed;
+}
+
+.menu-items{
+    list-style: none;
+   
+}
+
+.item a{
+    padding: 16px;
+    display: block;
+   
+    text-align: left;
+    
+}
+
+.item a:hover{
+    background-color: turquoise;
+    color: grey;
+    
+}

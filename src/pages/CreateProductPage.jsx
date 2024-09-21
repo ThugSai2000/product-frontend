@@ -1,17 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 function CreateProductPage()
 {
+
     const [productName, setProductName] = useState('');
     const [productImage, setProductImage] = useState('');
     const [productPrice, setProductPrice] = useState('');
     const [productQuantity, setProductQuantity] = useState('');
     const [sucess, setSucess] = useState('')
 
-    const handleSubmit = async (e) =>
+
+
+
+
+    const handleSubmit = async () =>
     {
-        e.preventDefault();
+
         try
         {
             const res = await axios.post('http://localhost:5000/api/products/create-product/', { name: productName, price: productPrice, image: productImage, quantity: productQuantity });
@@ -28,6 +33,9 @@ function CreateProductPage()
 
     return (
         <div className="product-form">
+
+
+
             <h2>Create Product</h2>
             <form onSubmit={handleSubmit} >
                 <div style={{ display: "flex", flexDirection: 'column', width: '40%', gap: 30, marginLeft: '30%' }}>

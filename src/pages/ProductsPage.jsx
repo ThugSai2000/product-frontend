@@ -23,29 +23,36 @@ function ProductsPage()
 
     const handleDelete = async (productId) =>
     {
+        console.log(productId);
+
         try
         {
-            await axios.delete(`/api/products/${productId}`);
-            setProducts(products.filter((product) => product.id !== productId));
+            await axios.delete(`http://localhost:5000/api/products/delete-product/${productId}`);
+            window.location.reload()
+            // setProducts(products.filter((product) => product.id !== productId));
         } catch (error)
         {
             console.error('Error deleting product:', error);
         }
     };
 
+
+
     return (
         <div className="products-list">
             <h2>Products</h2>
-            <div style={{ display: 'flex', gap: 20, alignItems: 'center' }}>
+            <div style={{ display: 'flex', gap: 20, alignItems: 'center', padding: '20px' }}>
                 {products.map((product) => (
-                    <div key={product.id} style={{ width: '30%', border: '1px solid grey' }}>
-                        <img src={product.image} alt="Avatar" style={{ width: "100%" }} />
+                    <div key={product.id} style={{ width: '30%', border: '1px solid grey', paddingBottom: '10px' }}>
+                        <img src={product.image} alt="Avatar" style={{ width: "100%", height: '300px', objectFit: 'fill' }} />
                         <div class="container">
                             <h4><b>{product.name}</b></h4>
-                            <p>{product.price}+$</p>
+                            <p>Price : {product.price}+$</p>
+                            <p>Quantity : {product.quantity}</p>
+
                         </div>
 
-                        <button onClick={() => handleDelete(product.id)}>Delete</button>
+                        <button onClick={() => handleDelete(product._id)}>Delete</button>
                     </div>
                 ))}
             </div>
@@ -54,3 +61,7 @@ function ProductsPage()
 }
 
 export default ProductsPage;
+
+
+
+
